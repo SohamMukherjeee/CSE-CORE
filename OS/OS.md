@@ -9,6 +9,19 @@
 - **Operating System (OS):** Software that manages hardware and software resources, acts as an interface between user and hardware.
 - **Functions:** Process management, memory management, file management, I/O management, and security.
 - **Types of OS:** Batch, Multiprogramming, Multitasking, Real-time, Distributed.
+
+```
+Batch OS → Executes jobs in batches, no user interaction.
+
+Multiprogramming OS → Runs multiple programs in memory, CPU never idle.
+
+Multitasking OS → Allows single user to perform multiple tasks at once.
+
+RTOS → Provides immediate response for critical tasks.
+
+Distributed OS → Multiple computers work together as one system.
+```
+
 - **System Calls:** Mechanism for user programs to request services from OS (e.g., `fork()`, `exec()`, `read()`).
 - **Kernel vs User Space:** Kernel space = core privileged code; User space = application programs.
 
@@ -56,6 +69,23 @@
 
 - **CPU-bound vs I/O-bound:** CPU-bound needs more computation; I/O-bound waits more for I/O.
 
+### CPU Scheduling
+
+- A process execution consists of a cycle of CPU execution and I/O execution.
+- Normally, every process begins with a CPU burst that may be followed by an I/O burst, then another CPU burst and then I/O burst, and so on. Eventually, in the last, it will end up on a CPU burst.
+
+## CPU Bound Process
+
+There are those processes which require most of the time on CPU.
+
+## I/O Bound Process
+
+There are those processes which require most of the time on I/O devices or peripherals.
+
+## Conclusion
+
+A good CPU scheduling idea should choose the mixture of both so that both I/O devices and CPU can be utilized efficiently.
+
 ### 📖 Theory Questions
 
 1. Explain the difference between Process and Thread.
@@ -87,8 +117,23 @@
 
 ### 📘 Theory
 
-- **CPU Scheduling:** Decides which process runs next when CPU is idle.
-- **Criteria:** Waiting time, Turnaround time, Throughput, CPU utilization, Fairness.
+- **CPU Scheduling:** CPU Scheduling is the method used by the operating system to decide which process from
+  the ready queue should be executed by the CPU next when multiple processes are waiting.
+
+## Why CPU Scheduling is Needed?
+
+- In a multiprogramming system, there are always more processes than CPUs.
+
+- The CPU must be kept as busy as possible.
+
+- If the CPU is idle while processes are waiting, system performance drops.
+
+- CPU scheduling ensures fairness, efficiency, and responsiveness.
+
+### **Criteria:** Waiting time, Turnaround time, Throughput, CPU utilization, Fairness.
+
+![alt text](<WhatsApp Image 2025-09-02 at 21.07.10_e8ef4248.jpg>)
+
 - **Algorithms:**
   - FCFS → simple but may cause **convoy effect**.
   - SJF → optimal in theory but requires burst prediction.
